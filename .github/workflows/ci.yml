@@ -12,5 +12,7 @@ jobs:
     uses: FcoJunior/actions/.github/workflows/build.yml@main
   test:
     uses: FcoJunior/actions/.github/workflows/test.yml@main
+    needs: build
   deploy:
     uses: FcoJunior/actions/.github/workflows/deploy.yml@main
+    needs: [build, test]
