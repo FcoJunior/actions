@@ -8,6 +8,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ${github.ref}
   build:
     uses: FcoJunior/actions/.github/workflows/build.yml@main
   test:
