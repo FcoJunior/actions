@@ -11,7 +11,7 @@ jobs:
   log:
     runs-on: ubuntu-latest
     steps:
-      - run: ${github.ref}
+      - run: echo ${GITHUB_REF#refs/heads/}
   build:
     uses: FcoJunior/actions/.github/workflows/build.yml@main
   test:
